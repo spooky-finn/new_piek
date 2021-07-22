@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+      {% include 'mainapp/parts/head-property.html' %}
+      <title>ООО "ПЭК" - Производство исполнительных механизмов и электроприводов</title>
+      <style>
+        .text-center{
+          color: #000;
+          font-family: 'SF UI Text';
+          font-weight: 500;
+          font-size: 2em;
+        }
+      </style>
+  </head>
+<body>
+{% include 'mainapp/parts/header.html' %}
+
+<main class="main-property" >
+  <div class="container title">
+  	<div class="rellax" data-rellax-speed="-3">
+  		<p class="d-flex justify-content-center text-center p-4">Спасибо. Ваша заявка отпралена менеджеру. Мы рабоатем пн-пт с 8 до 18</p>
+  	</div>
+
+  </div>
+
+</main>
+
+{% include 'mainapp/parts/footer.html' %}
+</body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'mainapp/docs/genezis_doc_page.html'%}
+{% load static %}
+
+{% block title %}
+<title>Руководства по эксплуатации для шлагбаумов - ПЭК</title>
+{% endblock title %}
+
+{% block header %}
+Руководства по эксплуатации для шлагбаумов
+{% endblock header %}
+
+
+
+{% block content %}
+
+<section class="">
+  <h2 class="doc-section__title">Шлагбаумы</h2>
+  <div class="doc-section bg-light p-md-5 p-3">
+    <div class="d-flex flex-column">
+      {% for doc in docs %} {% if doc.key_filter == 'шлагбаум'%}
+        <a href="{{doc.file.url}}"><p>- {{doc.name }}</p></a>
+        {% endif %} {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+
+
+{% endblock content %}

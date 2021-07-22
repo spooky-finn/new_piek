@@ -1,0 +1,15 @@
+.idea/*
+logs/*
+static/cache/*
+config/*
+adminstatic/*
+*.pyc
+piek.conf
+jrl/prod_settings.py
+jrl/local_settings.py
+*.DS_Store
+mainapp/migrations/0041_auto_20210405_2112.py
+mainapp/migrations/0042_product_product_description.py
+mainapp/migrations/0043_remove_productimage_show.py
+mainapp/migrations/0044_auto_20210407_1044.py
+

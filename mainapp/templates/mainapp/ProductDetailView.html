@@ -1,0 +1,113 @@
+{% extends 'mainapp/ProductGenezis.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{ product.href_title }}</title>
+{% endblock title %}
+
+
+{% block name %}
+
+		<a class="product-parent" href="/{{ product.parent.slug }}"><p>{{ product.parent }} /</p></a>
+		<h1> {{ product.name }}</h1>
+
+{% endblock name %}
+		
+		
+
+
+{% block table %}						
+<!-- Modifications List Table  -->
+{% if product.mod_table %}
+<!-- <h4 class="docs-ttl mb-3"><span>Модификации</span></h4> -->
+	<div class="mod_table_bg py-5">
+		<div class="container">
+		<div class="d-flex pl-2 pl-md-0">
+			<div class="d-flex flex-column"  id="cart_btn">
+
+				{% for mod in mod_list %}
+
+				<div class="cart-button-wrapper">
+					<button class="js-cart-buttons btn" type="button" add-to-cart-url='{% url "product" pk=mod.id %}' >
+						<svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-cart-plus" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+							<path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
+							<path fill-rule="evenodd" d="M8.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H9v1.5a.5.5 0 0 1-1 0V8H6.5a.5.5 0 0 1 0-1H8V5.5a.5.5 0 0 1 .5-.5z"/>
+						</svg>
+					</button>
+				</div>
+
+				{% endfor %}
+			</div>
+
+			
+			<div class="mod-table">
+					{{ product.mod_table | safe }}
+			</div>
+			
+
+		</div>
+	</div>
+	</div>
+{% endif %}
+<!-- End Modifications List Table  -->
+{% endblock table %}
+
+
+
+
+
+
+
+{% block scripts %}
+<script>
+	let arr = [];
+	let arr_slug = [];
+	{% for mod in mod_list %}
+	arr.push("{{mod.title}}");
+	arr_slug.push("{{ mod.slug_mod }}");
+	{% endfor %}
+	for (let j = 0, k=2; j < arr.length; j++, k++) {
+		$(`.mod-table table tr:nth-child( ${k} ) td:nth-child(1)`).text(arr[j]);
+		$(`.mod-table table tr:nth-child( ${k} ) td:nth-child(1)`).wrap(`<a href= ${arr_slug[j]} ></a>`);
+	}
+	</script>
+	
+	<script>
+	function ArrangementCartIcons() {
+			let first_row_height = $('.mod-table table  tr:nth-child(1)').outerHeight();
+			let second_row_height = $('.mod-table table tr:nth-child(2)').outerHeight();
+	
+			{% for mod in mod_list %}
+			var row_height = $('.mod-table table  > tbody > tr:nth-child('+ ({{ forloop.counter }} + 1) +')').outerHeight();
+			$('.cart-button-wrapper:nth-of-type('+ {{ forloop.counter }} +') .btn').attr('id', 'btn_'+ {{forloop.counter}});
+			document.querySelector('#btn_'+ {{forloop.counter }} +'').style['height'] = row_height + 'px';
+			{% endfor %}
+			document.querySelector('#cart_btn').style['margin-top'] = first_row_height +1+ 'px';
+			document.querySelector('#cart_btn').style['opacity'] = 1;
+		}
+	</script>
+	
+	
+	<!-- <script src="{% static 'js/piek_modules/Sensors.js' %}"></script> -->
+	<script src="{% static 'js/piek_modules/Product.js' %}"></script>
+	<script type="module"  src="{% static 'js/ajax/Product.add-to-cart.js' %}"></script>
+	<!-- <script src="{% static 'js/jquery.fancybox.min.js' %}"></script> -->
+	
+	<script>
+	$(".js-cart-buttons").click(function () {
+		var id  = "#"+ $(this).attr('id');
+		console.log(id);
+		$(id).addClass("btn-animate");
+		});
+		
+		
+		$(function(){
+			ArrangementCartIcons();//calling function on window load
+			$(window).resize(function(){
+				ArrangementCartIcons();//calling function on window resize
+			});
+		});
+		</script>
+
+{% endblock scripts %}
+	

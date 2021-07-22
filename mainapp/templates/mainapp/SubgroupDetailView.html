@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+{% load static %}
+{% load compress %}
+<html>
+<head>
+	{% include 'mainapp/parts/head-property.html' %}
+	<title>{{ subgroup_info.title }}</title>
+
+	{% compress css %}
+	<link type="text/x-scss" href="{% static 'sass/subgroup.sass' %}" rel="stylesheet" media="screen">
+	{% endcompress %}
+
+</head>
+<style media="screen">
+:root{
+	--navbar_bg_color: #fff;
+	--nav_link_color: #000;
+	}
+</style>
+<body>
+	<!-- WARNING: Условия -->
+	{% if subgroup_info.pic_of_hat %}
+
+
+	{% if subgroup_info.dark_banner %}
+	<style media="screen">
+	:root{
+		--navbar_bg_color: inherit;
+		--nav_link_color: #fff;
+		--primary_ttl_color: #fff;
+		}
+	</style>
+
+	{% else %}
+	<style media="screen">
+	:root{
+		--navbar_bg_color: inherit;
+		--nav_link_color: #000;
+		}
+	</style>
+
+
+	{% endif %}
+
+	<div class="banner" style="background-image: url({{ subgroup_info.pic_of_hat.url }});">
+		{% include 'mainapp/parts/header.html' %}
+
+		<div class="container-900 h-75 primary_ttl">
+		<h1 class=" align-middle p-3">{{subgroup_info.name}}</h1>
+	</div>
+</div>
+
+{% else %}
+
+{% include 'mainapp/parts/header.html' %}
+<div class="container-900">
+		<h1 class="primary_ttl">{{subgroup_info.name}}</h1>
+</div>
+
+{% endif %}
+<!-- WARNING:  -->
+
+	<div class="container-900">
+
+		{%if subgroup_info.description %}
+		<div class="subgroup-description">{{subgroup_info.description | safe }}</div>
+		<div class="lines-svg"></div>
+		{% endif %}
+
+		<section class="product-list">
+			{% for product in product_list %}
+			<div class="product-wrap">
+				<a href="{{ product.slug_product }}" class="">
+
+					<div class="d-flex justify-content-between">
+						<div class="p-meta">
+							<div class="p-title">{{ product.href_title }}</div>
+							<div class="p-description">{{ product.description |safe }}</div>
+						</div>
+
+						<div class="">
+							<img src="{{ product.img.url }}" alt="">
+						</div>
+
+						
+					</div>
+				</a>
+			</div>
+			{% endfor %}
+		</section>
+
+	{% if subgroup_info.content %}
+	<div class="content">{{ subgroup_info.content|safe }}</div>
+	{% endif %}
+
+</div>
+
+<script src="{% static 'js/aos.js' %}"></script>
+<script>AOS.init();</script>
+{% include 'mainapp/parts/footer.html' %}
+
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  {% include 'mainapp/parts/head-property.html' %}
+  <title>Руководства по эксплуатации - ПЭК</title>
+  <link href="{% static 'css/docs.css' %}" rel="stylesheet">
+</head>
+
+<body>
+  {% include 'mainapp/parts/header.html' %}
+  
+  <div class="container ">
+      <h1>Руководства по эксплуатации</h1>
+  </div>
+
+  <main class="pb-5" style="min-height: 50vh;">
+        <section class="container content-wrapper ">
+
+          <div class="d-flex wrapper py-2">
+            <a  href="{% url 'general_industrial_design' %}"  >
+                  <p>Электроприводы в общепромышленном исполнении</p> 
+                  <div class="arrow"></div> 
+            </a>
+          </div>
+
+          <div class="d-flex wrapper py-2">
+            <a  href="{% url 'explosion_proof_design' %}"   >
+                  <p>Электроприводы во взрывозащищенном исполнении</p>
+                  <div class="arrow"></div> 
+            </a>  
+          </div>
+
+          <div class="d-flex wrapper py-2">
+            <a href="{% url 'sensors_and_controllers' %}">
+                  <p>Датчики и контроллеры для механизмов и приводов</p>
+                  <div class="arrow"></div> 
+            </a>
+          </div>
+
+          <div class="d-flex wrapper py-2">
+            <a href="{% url 'starting_and_control_devices' %}">
+                  <p>Пусковые и управляющие устройства для механизмов</p>
+                  <div class="arrow"></div> 
+            </a>
+          </div>
+
+          <div class="d-flex wrapper py-2">
+            <a  href="{% url 'barriers' %}" >
+                    <p>Шлагбаумы</p>
+                    <div class="arrow"></div> 
+            </a>
+          </div>
+
+        </section>
+
+</main>
+{% include 'mainapp/parts/footer.html' %}
+
+</body>
+</html>

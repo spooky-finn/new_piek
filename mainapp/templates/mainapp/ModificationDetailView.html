@@ -1,0 +1,86 @@
+{% extends 'mainapp/ProductGenezis.html' %}
+{% load static %}
+
+{% block title %}
+<title>{{ product.h1_mod }} {{ mod.title }} </title>
+{% endblock title %}
+
+
+
+{% block name %}
+	<div class="flex-column order-1  primary_ttl">
+		<a class="product-parent" href="/{{ product.parent.slug }}"><p>{{ product.parent }} / {{ mod.parent }}</p></a>
+		<h1>{{ product.h1_mod }} {{ mod.title }}</h1>
+	</div>
+{% endblock name %}
+
+
+{% block table %}
+<div class="container">
+<div class="d-flex">
+<div class="about-modification container py-4" id='cart-form-bg'>
+
+	<div class="flex-column mod-content">
+
+			{{ mod.content | safe }}
+	</div>
+
+</div>
+
+
+<!-- Add to cart section -->
+<div class="d-none d-md-flex flex-column ml-4 pt-md-1">
+
+	<div class="d-flex flex-column justify-content-center">
+		<form id="js-form-add-cart" add-to-cart-url='{% url "product" pk=mod.id %}'>
+			<input id="js-quantity-field" class="input-quantity mr-3" min="1" value=1 type="text" name="quantity" autocomplete="off" oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+			<div class="d-flex align-self-center p-3 btn-wrap">
+
+
+				<div id="js-cart-button" class="add-to-cart">
+					<div class="default">Купить</div>
+					<div class="success">Добавлено</div>
+					<div class="cart">
+						<div>
+							<div></div>
+							<div></div>
+						</div>
+					</div>
+					<div class="dots"></div>
+				</div>
+
+			</div>
+		</form>
+	</div>
+</div>
+<!-- End Add to cart section -->
+</div>
+</div>
+{% endblock table %}
+
+
+
+
+
+{% block scripts %}
+<script>
+let mod_bg = document.getElementById("cart-form-bg").getBoundingClientRect().top;
+let sidebar = document.getElementById('content-left');
+let sidebar_now_position = sidebar.getBoundingClientRect().top;
+var position  = mod_bg - sidebar_now_position;
+sidebar.style.marginTop = position+ 10 + 'px';
+</script>
+<script type="text/javascript">
+document.querySelectorAll('.add-to-cart').forEach(button => {
+	button.addEventListener('click', e => {
+		button.classList.toggle('added');
+	});
+});
+</script>
+
+
+
+
+<script type="module"  src="{% static 'js/ajax/Modification.add-to-cart.js' %}"></script>
+
+{% endblock scripts %}

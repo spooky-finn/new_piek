@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+{% load static %}
+{% load compress %}
+<html>
+	
+<head>
+	<meta name="description" content="{{ product.meta_description }}">
+	{% include 'mainapp/parts/head-property.html' %}
+
+	{% block title %}
+	{% endblock title %}
+	
+	<link href="{% static 'css/ProductDetailView.css' %}" rel="stylesheet">
+	<!-- <link href="{% static 'css/ProdModBase.css' %}" rel="stylesheet"> -->
+	<link href="{% static 'css/jquery.fancybox.css' %}" rel="stylesheet">
+	<link href="{% static 'css/ModificationsDetailView_CartButtons.css' %}" rel="stylesheet">
+
+
+	{% compress css %}
+	<link type="text/x-scss" href="{% static 'sass/prodmod.sass' %}" rel="stylesheet" media="screen">
+	{% endcompress %}
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+
+</head>
+
+<body>
+	{% include 'mainapp/parts/header.html' %}
+<main itemscope itemtype="https://schema.org/Product">
+ 
+<div class="container ">
+
+
+<!-- PHOTOS -->
+	<div  class="d-flex my-5 flex-column flex-md-row">
+		<div class="flex-column order-2">
+			<div class="splide">
+				<div class="splide__track">
+					<ul class="splide__list">
+						{% for p in photos %}
+			
+						<img class="splide__slide"  itemprop="image" src="{{p.image.url}}">
+						{% endfor %}
+					</ul>
+				</div>
+			</div>
+		</div>	
+
+<!-- PAGE TITLE		 -->
+		<div class="flex-column order-1  primary_ttl"
+			 itemprop="name">
+        {% block name %}
+        {% endblock name %}
+
+			<!-- <div class="p-description">{{ product.description |safe }}</div> -->
+		</div>
+	</div>
+	
+
+<!-- PRODUCT DESCRIPTION -->
+	{% if product.product_description %}
+	<div class="product-description"
+		 itemprop="description">{{ product.product_description | safe}}
+	</div>
+	{% endif %}
+
+
+</div>
+
+<!-- MAIN CONTENT  -->
+	<div class="js-content">
+		{% block table %}
+		{% endblock table %}	
+	</div>
+
+
+<div class="container ">
+	<!-- Block sensors variation  -->
+	{% if sensors_list %}
+	<h4 class="sensors-ttl">
+	<span>Доступные блоки сигнализации положения
+		<a onclick="sensors_rerendering()" href="javascript:void(0);">| Подробнее &#8594;</a>
+	</span> 
+	</h4>
+	<div class="sensors-hero">
+			{% for sensor in sensors_list %}
+			<div class="sensor-inner">
+			<img src="{{sensor.icon_file.url}}" alt="">     
+			<p class="sensor-character">{{sensor.character}}</p>					
+			<p class="sensor-name">{{sensor.name}}</p>
+		</div>
+		{% endfor %}
+	</div>
+	
+
+		
+	<div class="rerend-b-sensors block">
+		{% for sensor in sensors_list %}
+		<div class="flex-column sensor-wrap">
+
+			<div class="d-flex m-2 sensor-meta">
+				<img src="{{ sensor.icon_file.url }}" alt="">
+					<div class="sensor-character">{{ sensor.character }}</div>
+					<div  class="sensor-name">{{ sensor.name }}</div>
+			</div>
+
+			<div class="sensor-description">{{ sensor.description }}</div>
+
+		</div>
+		{% endfor %}
+	</div>
+	<div class="lines-svg"></div>
+	{% endif %}
+	<!-- End Block sensors variation  -->
+
+
+
+<!-- Technical characteristics -->
+
+<div class="content">
+    {{ product.content | safe }}
+
+    {% if group.groups_content  %}
+    {{ group.groups_content | safe }}
+    {% endif %}
+  </div>
+
+<!-- End Technical characteristics -->
+
+</div>
+
+
+<div class="docs-container">
+  <!-- Documentation -->
+  {% if docs %}
+	<h4 class="docs-ttl"><span>Документация</span></h4>
+  {% endif %}
+  
+  <div class="docs-section">
+	{% for doc in docs %}
+	  <div>
+  
+		<a href="{{doc.item.file.url}}">
+		   <svg width="2em" height="2em" viewBox="0 0 16 16" class="mx-auto my-3 bi bi-file-text" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+			<path fill-rule="evenodd" d="M4 1h8a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2zm0 1a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V3a1 1 0 0 0-1-1H4z"/>
+			<path fill-rule="evenodd" d="M4.5 10.5A.5.5 0 0 1 5 10h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zm0-2A.5.5 0 0 1 5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5z"/>
+		  </svg>
+		  <p>{{doc.name}}</p>
+		</a>
+  
+	  </div>
+	{% endfor %}
+  </div>
+  
+  <!-- End Documentation -->
+</div>
+
+
+</div>
+</main>
+{% include 'mainapp/parts/footer.html' %}
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<script>
+	document.addEventListener( 'DOMContentLoaded', function () {
+		new Splide( '.splide' ).mount();
+	} );
+</script>
+<script>
+	function sensors_rerendering(){
+		var div = document.getElementsByClassName("rerend-b-sensors");
+		div[0].classList.add('b-show');
+
+		document.getElementsByClassName("sensors-hero")[0].classList.add('block');
+	}
+</script>
+
+{% block scripts %}
+{% endblock scripts %}
+
+</body>
+</html>

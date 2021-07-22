@@ -1,0 +1,10 @@
+User-Agent: *
+Host: https://piek.ru/
+
+Disallow: /admin/
+Disallow: /checkout/
+Disallow: /sent_mail/
+Disallow: /catalog/
+Disallow: /media/
+
+Sitemap: https://piek.ru/sitemap.xml/

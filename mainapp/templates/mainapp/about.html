@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	{% include 'mainapp/parts/head-property.html' %}
+	<title>О компании</title>
+	<link href="{% static 'css/about.css' %}" rel="stylesheet">
+	<link href="{% static 'css/aos.css' %}" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+</head>
+
+
+<body>
+<style>
+	.footer{
+		border: none!important;;
+	}
+</style>
+<main>
+	<!-- <div class="about__banner" style="background-image: url({% static 'img/about-page/about-banner.jpg' %}); z-index: 99;"> -->
+
+		{% include 'mainapp/parts/header.html' %}
+		<div class="container pt-5">
+			
+			<div class="d-flex flex-wrap justify-content-around">
+
+				<div class="benefits__element">
+					<p data-aos="fade-down" data-aos-duration="1000">20</p>
+					<p data-aos="fade" data-aos-duration="200">лет в сфере производства электроприводов</p>
+				</div>
+				<div class="benefits__element">
+					<p data-aos="fade-down" data-aos-duration="1300">700</p>
+					<p data-aos="fade" data-aos-duration="200" >модификаций электроприводов</p>
+				</div>
+				<div class="benefits__element">
+					<p data-aos="fade-down" data-aos-duration="1600">4250</p>
+					<p data-aos="fade" data-aos-duration="200">кв. м. производственных площадей</p>
+				</div>
+			</div>
+
+		</div>
+
+
+
+	<div class="container inflow">
+
+
+		<p >ПЭК - группа компаний, специализирующихся на производстве исполнительных механизмов и электроприводов для трубопроводной арматуры.
+		У нас собственное производство полного цикла, в том числе литейный цех, цех термообработки и конструкторское бюро в Чебоксарах.</p>
+
+		<p>Компания использует для металлообработки точные обрабатывающие ЧПУ центры от производителей Mazak, Hortford, Dossan, Mitsubishi, которые позволяют нам  за счет концентрации операции  и больших производственных мощностей иметь самые маленькие сроки изготовления, которые обычно составляют от 5 до 12 дней.</p>
+
+		<p cl>Каждая партия, прошедшая металлообработку, исключительно проверяется на измерительном центре.
+			Кроме того, мы постоянно проводим ресурсные испытания, цель которых - повышение качества и увеличение ресурса работы продукции.</p>
+	
+
+		<!-- <div class="splide mt-5">
+			<div class="splide__track">
+				<ul class="splide__list">
+					<img class="splide__slide" src="{% static 'img/about-page/image_2.jpg' %}">
+					<img class="splide__slide" src="{% static 'img/about-page/4.jpg' %}">
+					<img class="splide__slide" src="{% static 'img/about-page/5.jpg' %}">
+				</ul>
+			</div>
+		</div> -->
+
+	</div>
+	{% include 'mainapp/parts/about.history.html'%}
+
+</main>
+
+<script src="{% static 'js/aos.js' %}"></script>
+<script>AOS.init();</script>
+{% include 'mainapp/parts/footer.html' %}
+
+
+<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/js/splide.min.js"></script>
+<script>
+	document.addEventListener( 'DOMContentLoaded', function () {
+		new Splide( '.splide' ).mount();
+	} );
+</script>
+
+
+<script type="module">
+import {Gradient} from "../../../static/js/js-color-gradient.js";
+const colorGradient = new Gradient();
+
+
+var about_history_rows = $('.history div.row.h');
+var about_history_lines = $('.history div.row.t')
+
+colorGradient.setGradient("#9198e5", "#e66465"); // from .. to ..
+colorGradient.setMidpoint(about_history_rows.length+1); // set to  color steps
+colorGradient.getArray(); // get all 8 colors: [ "#d11630", "#bd2534", ... ]
+console.log(colorGradient.getColor(1)); // #bd2534
+
+for (var i = 0; i <= about_history_rows.length; i++ ){
+
+	// $(about_history_rows).eq(i).attr('id', 'story_'+i );
+	// var elem = document.querySelectorAll("#story"+i+" .col-2::after ");
+	var color = colorGradient.getColor(i+1);
+	// кружочки
+	$(about_history_rows).eq(i).find('.circle').css('background-color', color);
+
+	$(about_history_rows).eq(i).find('.col-2 .after').attr('style', 'border-color:'+ color);
+	$(about_history_rows).eq(i).find('h5').attr('style', 'color: '+color);
+	// линии
+	$(about_history_lines).eq(i).find('div, hr').attr('style', 'border-color: '+ color);
+}
+</script>
+</body>
+
+</html>

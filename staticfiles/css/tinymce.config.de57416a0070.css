@@ -1,0 +1,63 @@
+:root{
+  --image_width: 400px;
+  --doc_wrab_bg_color: #edf1f6;
+  --doc_wrab_bg_color_hover: #f6eeed;
+
+
+  --tables_cell_padding: 14px;
+  --content_line_height: 23px;
+	--content_font_color: #444;
+}
+
+a, p, span, li, a, p, span,  table td{
+  font-family: 'SF UI Text';
+  color: var(--content_font_color);
+  font-weight: normal;
+  line-height: var(--content_line_height);
+  font-size: 14px!important;
+}
+
+ strong{color: #222;}
+
+ table{
+  width: 100%!important;
+  border: 1px solid #999;
+  border-bottom: 1px solid #e1dedc;
+
+}
+table td{
+  border-right: 1px solid #999;;
+  padding: var(--tables_cell_padding);
+}
+
+
+table tr{
+  border-bottom: 1px solid #999;
+  transition-duration: .2s;
+}
+table tr:hover{
+  background-color: #eee;
+}
+
+#MOD span, #MOD p, #MOD td{
+  font-size: 13px;
+}
+
+#MOD td{border: 1px solid #999!important; margin: 0; padding: var(--height_of_row_mod_table);}
+#MOD tr{border-bottom: 1px solid #999;}
+#MOD tr:hover{ background-color: var(--mod_table_bg_color_hover);}
+#MOD{
+  width: 100% !important;
+  height: auto !important;
+  border: none !important;
+}
+#MOD td:first-of-type{
+  font-size: 13px!important;
+}
+#MOD tr:nth-child(n+2) td:nth-child(1){
+  border: 1px solid #999;
+  padding: 10px !important;
+}
+#MOD tr:nth-child(1) td:nth-child(1){
+  min-width:30% !important;
+}

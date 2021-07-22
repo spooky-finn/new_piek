@@ -1,0 +1,311 @@
+{% load static %}
+<div  data-aos="fade"
+	 data-aos-duration="1000"
+	 data-aos-delay="300" class="col-lg-3 d-none d-lg-flex justify-content-end p-0 pr-xl-5">
+
+
+
+</div>
+<!-- 
+
+<div id="content-left" class="content-left">
+
+	<div class="sidebar-content">
+	
+	<div class="sidebar-title">Продукция</div>
+	
+	<div class="sidebar-text">
+		<p class="lil_title">Электроприводы в общепромышленном исполнеии:</p>
+		<div class="card">
+		  <div class="card-header">
+			<a class="card-link" data-toggle="collapse" href="#collapseOne">▼</a>
+			<a href="/mechanisms-meo/">МЭО</a>
+	
+		  </div>
+		  <div id="collapseOne" class="collapse" >
+			<div class="card-body">
+			  <a href="/mechanisms-meo/6_3/"><p>МЭО-6,3</p></a>
+			  <a href="/mechanisms-meo/25/"><p>МЭО-25</p></a>
+			  <a href="/mechanisms-meo/40/"><p>МЭО-40</p></a>
+			  <a href="/mechanisms-meo/160/"><p>МЭО-160</p></a>
+			  <a href="/mechanisms-meo/250/"><p>МЭО-250</p></a>
+			  <a href="/mechanisms-meo/500/"><p>МЭО-500</p></a>
+			  <a href="/mechanisms-meo/630/"><p>МЭО-630</p></a>
+			  <a href="/mechanisms-meo/1600/"><p>МЭО-1600</p></a>
+			  <a href="/mechanisms-meo/4000/"><p>МЭО-4000</p></a>
+			</div>
+		  </div>
+		</div>
+		<div class="card">
+		  <div class="card-header last-child">
+			<a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+				▼ <a href="/mechanisms-meof/">МЭОФ</a>
+		  </a>
+		  </div>
+		  <div id="collapseTwo" class="collapse" >
+			<div class="card-body">
+			  <a href="/mechanisms-meof/6_3/"><p>МЭОФ-6,3</p></a>
+			  <a href="/mechanisms-meof/15/"><p>МЭОФ-15</p></a>
+			  <a href="/mechanisms-meof/25/"><p>МЭОФ-25</p></a>
+			  <a href="/mechanisms-meof/40/"><p>МЭОФ-40</p></a>
+			  <a href="/mechanisms-meof/160/"><p>МЭОФ-160</p></a>
+			  <a href="/mechanisms-meof/250/"><p>МЭОФ-250</p></a>
+			  <a href="/mechanisms-meof/500/"><p>МЭОФ-500</p></a>
+			  <a href="/mechanisms-meof/630/"><p>МЭОФ-630</p></a>
+			  <a href="/mechanisms-meof/1600/"><p>МЭОФ-1600</p></a>
+			  <a href="/mechanisms-meof/4000/"><p>МЭОФ-4000</p></a>
+			</div>
+		  </div>
+		</div>
+	
+		<p class="lil_title">Электроприводы и механизмы многооборотные в общепромышленном исполнении:</p>
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+				▼ <a href="/elektroprivody-pem/">МЭМ</a>
+		  </a>
+		  </div>
+		  <div id="collapseThree" class="collapse" >
+			<div class="card-body">
+			  <a href="/elektroprivody-pem/mem-40/"><p>МЭМ-40</p></a>
+			  <a href="/elektroprivody-pem/mem-100/"><p>МЭМ-100</p></a>
+			</div>
+		  </div>
+		</div>
+	
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse" href="#collapseFour">
+				▼ <a href="/elektroprivody-pem/">ПЭМ</a>
+		  </a>
+		  </div>
+		  <div id="collapseFour" class="collapse" >
+			<div class="card-body">
+			  <a href="/elektroprivody-pem/pem-a/"><p>ПЭМ-А</p></a>
+			  <a href="/elektroprivody-pem/pem-b/"><p>ПЭМ-Б</p></a>
+			  <a href="/elektroprivody-pem/pem-v/"><p>ПЭМ-В</p></a>
+			</div>
+		  </div>
+		</div>
+	
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="/elektroprivody-pem-s-reductorom/" class="sidebar-link">ПЭМ с редуктором</a>
+			  </a>
+		  </div>
+	
+		  <div class="card-header last-child">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="/elektroprivody-pem/nm/" class="sidebar-link">Электропривод Н-М</a>
+			  </a>
+		  </div>
+		</div>
+	
+		<p class="lil_title">Механизмы электрические прямоходные в общепромышленном исполнении:</p>
+	
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse" href="#collapseFive">
+				▼ <a href="/mechanisms-mep/">МЭП</a>
+		  </a>
+		  </div>
+		  <div id="collapseFive" class="collapse" >
+			<div class="card-body">
+			  <a href="/mechanisms-mep/2500/"><p>МЭП-2500</p></a>
+			  <a href="/mechanisms-mep/6300/"><p>МЭП-6300</p></a>
+			  <a href="/mechanisms-mep/25000/"><p>МЭП-25000</p></a>
+			  <a href="/mechanisms-mep/40000/"><p>МЭП-40000</p></a>
+			</div>
+		  </div>
+		</div>
+	
+		<div class="card">
+		  <div class="card-header  last-child">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="/mechanisms-mep/mep-r" class="sidebar-link">МЭПР</a>
+			  </a>
+		  </div>
+		</div>
+	
+		<p class="lil_title">Электроприводы во взрывозащищенном исполнении:</p>
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse" href="#collapseSix">
+				▼ <a href="/elektroprivody-vzryvozashishennye-meo/">МЭО-IICT4 (IIBT4)</a>
+		  </a>
+		  </div>
+		  <div id="collapseSix" class="collapse" >
+			<div class="card-body">
+			  <a href="/elektroprivody-vzryvozashishennye-meo/40/"><p>МЭО-40-IICT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meo/160/"><p>МЭО-160-IICT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meo/250/"><p>МЭО-250-IICT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meo/500/"><p>МЭО-500-IICT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meo/1000/"><p>МЭО-1000-IIBT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meo/1600/"><p>МЭО-1600-IIBT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meo/4000/"><p>МЭО-4000-IIBT4</p></a>
+			</div>
+		  </div>
+		</div>
+	
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse" href="#collapseSeven">
+				▼ <a href="/elektroprivody-vzryvozashishennye-meof/">МЭОФ-IIСT4 (IIBT4)</a>
+		  </a>
+		  </div>
+		  <div id="collapseSeven" class="collapse" >
+			<div class="card-body">
+			  <a href="/elektroprivody-vzryvozashishennye-meof/40/"><p>МЭОФ-40-IIСT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meof/160/"><p>МЭОФ-160-IIСT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meof/250/"><p>МЭОФ-250-IIСT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meof/500/"><p>МЭОФ-500-IIСT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meof/1000/"><p>МЭОФ-1000-IICT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meof/1600/"><p>МЭОФ-1600-IIBT4</p></a>
+			  <a href="/elektroprivody-vzryvozashishennye-meof/4000/"><p>МЭОФ-4000-IIBT4</p></a>
+			</div>
+		  </div>
+		</div>
+	
+		<div class="card">
+		  <div class="card-header last-child">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="/elektroprivody-vzryvozashishennye-mepk/6300/" class="sidebar-link">МЭПК-IIСT4</a>
+			  </a>
+		  </div>
+		</div>
+	
+		  <p class="lil_title">Трубопроводная арматура с электроприводом:</p>
+		<div class="card">
+		  <div class="card-header last-child">
+			<a class="collapsed card-link" data-toggle="collapse" href="#collapseEight">
+				▼ <a href="/armature/">Запорная арматура</a>
+		  </a>
+		  </div>
+		  <div id="collapseEight" class="collapse" >
+			<div class="card-body">
+			  <a href="#"><p>Задвижки стальные</p></a>
+			  <a href="#"><p>Задвижки чугунные</p></a>
+			  <a href="#"><p>Краны запорные</p></a>
+			  <a href="#"><p>Краны регулирующие</p></a>
+			  <a href="#"><p>Клапаны регулирующие</p></a>
+			  <a href="#"><p>Затворы дисковые</p></a>
+			</div>
+		  </div>
+		</div> 
+	
+		<p class="lil_title">Шлагбаумы:</p>
+	
+		<div class="card">
+		  <div class="card-header last-child">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="/shlagbaumy-vzryvozashishennye/">Шлагбаумы взрывозащищенного исполнения</a>
+		  </a>
+		  </div>
+		</div>
+	
+		<p class="lil_title">Механизмы сигнализации:</p>
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="/signalizings/msp" class="sidebar-link">МСП</a>
+		  </a>
+		  </div>
+		</div>
+	
+		 <div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="#" class="sidebar-link">МСП-94</a>
+		  </a>
+		  </div>
+		</div>
+	
+		<div class="card">
+		  <div class="card-header last-child">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="#" class="sidebar-link">МСП-РМ(РБ) - аналог колонки КДУ</a>
+		  </a>
+		  </div>
+		</div> 
+	
+		<p class="lil_title">Пусковые и управляющие устройства:</p>
+	
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse" href="#collapseTen">
+				▼ <a href="/instruments/">ПБР</a>
+		  </a>
+		  </div>
+		  <div id="collapseTen" class="collapse" >
+			<div class="card-body">
+			  <a href="/instruments/pbr_3a"><p>ПБР-2М, ПБР-22</p></a>
+			  <a href="/instruments/pbr_2m"><p>ПБР-3А, ПБР-33</p></a>
+			</div>
+		  </div>
+		</div>
+	
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse" href="#collapseEleven">
+				▼ <a href="/instruments/fc/">ФЦ</a>
+		  </a>
+		  </div>
+		  <div id="collapseEleven" class="collapse" >
+			<div class="card-body">
+			  <a href="#"><p>фц-0610</p></a>
+			  <a href="#"><p>фц-0620</p></a>
+			  <a href="#"><p>фц-0650</p></a>
+			</div>
+		  </div>
+		</div> 
+	
+			<div class="card">
+				<div class="card-header">
+					<a class="collapsed card-link" data-toggle="collapse">
+						<a href="/instruments/fc/" class="sidebar-link">ФЦ</a>
+				</a>
+				</div>
+			</div>
+	
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="/bez/" class="sidebar-link">БЭЗ</a>
+		  </a>
+		  </div>
+		</div>
+	
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse" href="#collapseTwelve">
+				▼ <a href="/instruments/btz/">БТЗ</a>
+		  </a>
+		  </div>
+		  <div id="collapseTwelve" class="collapse" >
+			<div class="card-body">
+			  <a href="#"><p>БТЗ-3.1</p></a>
+			  <a href="#"><p>БТЗ-3.2</p></a>
+			</div>
+		  </div>
+		</div>
+	
+		<div class="card">
+		  <div class="card-header">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="#" class="sidebar-link">БУМ</a>
+		  </a>
+		  </div>
+		</div>
+	
+		<div class="card">
+		  <div class="card-header last-child">
+			<a class="collapsed card-link" data-toggle="collapse">
+				<a href="#" class="sidebar-link">БУШ</a>
+		  </a>
+		  </div>
+		</div>
+	
+	</div>
+	</div>
+	</div> -->

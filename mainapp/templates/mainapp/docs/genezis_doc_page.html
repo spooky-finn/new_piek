@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+{% load static %}
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  {% include 'mainapp/parts/head-property.html' %}
+  <link href="{% static 'css/docs.css' %}" rel="stylesheet">
+  {% block title %}
+  {% endblock title %}
+</head>
+<body>
+  {% include 'mainapp/parts/header.html' %}
+
+  <div class="container" >
+    <div class="secondary_ttl ">
+      <h1>{% block header %}{% endblock header %}</h1>
+    </div>
+  </div>
+  
+  <main>
+
+<div class="container pb-3" style="margin-top: 5rem;">
+  {% block content %}
+  {% endblock content %}
+  </div>
+  </main>
+  {% include 'mainapp/parts/footer.html' %}
+</body>
+</html>

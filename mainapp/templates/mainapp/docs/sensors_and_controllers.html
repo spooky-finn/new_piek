@@ -1,0 +1,31 @@
+{% extends 'mainapp/docs/genezis_doc_page.html'%}
+{% load static %}
+
+{% block title %}
+<title>Документация на датчики - ПЭК</title>
+{% endblock title %}
+
+
+{% block content %}
+
+<section class="">
+  <h2 class="doc-section__title">Блоки сигнализации положения</h2>
+  <div class="doc-section bg-light p-md-5 p-3">
+      {% for doc in docs %} {% if doc.key_filter == 'бсп' %}
+        <a href="{{doc.file.url}}"><p>- {{doc.name }}</p></a>
+        {% endif %} {% endfor %}
+  </div>
+</section>
+
+
+<section class="">
+  <h2 class="doc-section__title">Механизмы сигнализации положения </h2>
+  <div class="doc-section bg-light p-md-5 p-3">
+      {% for doc in docs %} {% if doc.key_filter == 'мсп' %}
+        <a href="{{doc.file.url}}"><p>- {{doc.name }}</p></a>
+        {% endif %} {% endfor %}
+  </div>
+</section>
+
+
+{% endblock content %}

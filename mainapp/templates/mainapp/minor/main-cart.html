@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	{% include 'mainapp/parts/head-property.html' %}
+	<link rel="stylesheet" href="{% static 'css/cart.css' %}">
+	<title>Корзина</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		window.addEventListener( "pageshow", function ( event ) {
+		  var historyTraversal = event.persisted ||
+		                         ( typeof window.performance != "undefined" &&
+		                              window.performance.navigation.type === 2 );
+		  if ( historyTraversal ) {
+		    // Handle page restore.
+		    window.location.reload();
+		  }
+		});
+	</script>
+
+	{% include 'mainapp/parts/header.html' %}
+
+
+		<div style="min-height: 80vh;"class="container ">
+			{% block content %}
+			{% endblock content %}
+		</div>
+</main>
+<script src="{% static 'js/scrollpos.js' %}"></script>
+{% include 'mainapp/parts/footer.html' %}
+{% block scripts %}
+{% endblock scripts %}
+</body>
+</html>

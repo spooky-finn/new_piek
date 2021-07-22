@@ -1,0 +1,76 @@
+:root {
+
+  --height_of_row_mod_table: 12px;
+  --mod_table_bg_color: #f9f9f9;
+  --mod_table_bg_color_hover: #eeeeee;
+}
+
+
+html{
+  overflow-x: hidden;
+}
+
+#cart_btn{
+  width: auto;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+}
+
+.btn{
+  display: flex;
+  width: 40px;
+  justify-content: center;
+  border: none;
+  align-items: center;
+  cursor: pointer;
+  margin: 0;
+  border-radius: 0px;
+  border-bottom: 1px dashed #e1dedc !important;
+  background-color: inherit;
+  outline: none !important;
+  box-shadow: none !important;
+  color: #3d3d3d;
+  font-size: 18px;
+
+  transition: transform .15s linear forwards, background-color .2s;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+
+.btn-animate{
+  color:#224cf3!important;
+}
+
+
+
+@media (max-width: 767.98px) {
+  :root{
+    --height_of_row_mod_table: 5px;
+  }
+  .mod-table table  td{ padding: 0 var(--height_of_row_mod_table);}
+
+}
+
+
+
+:root{
+  --cart_buttons_color: #efefef;
+  --cart_buttons_radius: 20px;
+
+  --border_color: #e5e5e5;
+}
+:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+
+}
+
+
+form{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  height: 42px;
+}
+

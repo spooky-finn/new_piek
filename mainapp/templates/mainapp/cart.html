@@ -1,0 +1,116 @@
+{% extends 'mainapp/minor/main-cart.html' %}
+{% load static %}
+{% block content %}
+{% if product_list %}
+
+
+<div class="container">
+	
+	<div class="secondary_ttl"><h1>Корзина<span class="pl-2">(<span id="js-in-cart-counter">{{ in_cart_counter }}</span>)</span></h1></div>
+
+	<div class="my-3 promt-text">Вы можете дописать наименование, указав блок сигнализации положения, степень защиты, климатическое исполнение.</div>
+
+	<div class="cart-header d-none d-md-flex">
+		<p>Наименование</p>
+		<p>Количество</p>
+	</div>
+
+	{% for item in product_list %}
+	<div class="d-flex flex-column flex-md-row py-2 justify-content-around item">
+
+<div class="flex-row py-3 py-md-4">
+
+	<!-- edit conventional_designation -->
+		<form class="js-conventional_designation d-flex justify-content-center">{% csrf_token %}
+			<input class="input-designation"
+					dj_url_function="{% url 'update_conventional_designation' pk=item.id %}"
+					 type="text"
+					 name='conventional_designation'
+					 autocomplete="off"
+					 value="{% if item.conventional_designation != '' and item.conventional_designation != None %}{{ item.conventional_designation}} {% else %} {{ item.title }} {% endif %}">
+		</form>
+
+</div>
+
+
+		<div class="buttons-secton flex-row mt-1 mt-md-0">
+
+
+	<!-- plus button -->
+		<div>
+					<input class="btn-quantity w-6rem"
+								dj_url_function="{% url 'update_quantity' pk=item.id %}"
+								type="button"
+								name="plus"
+								value="+" >
+		</div>
+	<!-- input quantity -->
+			<form class="js-input-integer" >{%csrf_token%}
+				<input
+							class="input-integer w-6rem"
+							dj_url_function="{% url 'update_quantity' pk=item.id %}"
+							type="text"
+							name='integer'
+							autocomplete="off"
+							onchange="if( this.value == '' ){this.value = '1';}"
+							value='{{ item.quantity }}'
+							min="1"
+							oninput="this.value=this.value.replace(/[^0-9]/g,'');">
+			</form>
+
+
+  <!-- minus button -->
+	<div>
+				<input class="btn-quantity w-6rem"
+			 				dj_url_function="{% url 'update_quantity' pk=item.id %}"
+							type="button"
+							name="minus"
+							value="-" >
+	</div>
+
+	<!-- mobile delete button -->
+			<div class="d-flex d-md-none">
+				<div class="btn-delete js-btn-delete-mobile w-6rem"
+					dj_url_function="{% url 'remove_from_cart' pk=item.id %}"><svg width="1.6em" height="1.6em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/><path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/></svg></div>
+			</div>
+
+		</div>
+
+
+<!-- desctope delete button  -->
+		<div class="d-none d-md-flex">
+			<div class="btn-delete mr-3 w-6rem"
+				dj_url_function="{% url 'remove_from_cart' pk=item.id %}"><svg width="1.6em" height="1.6em" viewBox="0 0 16 16" class="bi bi-x" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/><path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/></svg></div>
+		</div>
+
+
+
+	</div>
+
+	{% endfor %}
+	<div class="d-flex justify-content-center">
+		<a href="{% url 'checkout'%}" class="btn d-flex justify-content-center mt-5">Оформить заказ</a>
+	</div>
+		<!-- <img class="w-100 my-5 pt-5"src="{% static 'img/Структура условного обозначения.jpg' %}" alt=""> -->
+</div>
+
+
+
+{% else %}
+<div style="height: 300px;" class="container">
+<h1 class="text-center p-2 mt-5" style="font-weight: 200;" >Ваша корзина пуста</h1>
+<div class="d-flex d-md-none py-3 mt-5 go-to-main w-100"><a href="/">Вернуться на главную </a></div>
+</div>
+{% endif %}
+{% endblock content %}
+
+{% block scripts %}
+<script type="text/javascript">
+{% for item in product_list %}
+		$('.item:nth-of-type('+ {{ forloop.counter }} +')').attr('id', 'btn_'+ {{forloop.counter}});
+{% endfor %}
+</script>
+
+<script type="module" src="{% static 'js/ajax/ajax.cart.js' %}"></script>
+
+{% endblock scripts %}
