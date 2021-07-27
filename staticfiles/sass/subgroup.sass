@@ -1,14 +1,4 @@
-*
-    font-family: 'Montserrat' 
 
-%borderBottom
-    content: ''
-    display: block
-    margin: auto
-    height: 1px
-    width: 0px
-    background: transparent
-    transition: width .3s ease, background-color .3s ease-in-out
 .lines-svg
     content: ""
     position: relative
@@ -25,9 +15,10 @@
         padding: 0 1rem
 
 .primary_ttl
-    font-weight: 800
-    font-size: 38px
+    font-weight: 700
+    font-size: 32px
     margin: 3rem auto
+    margin-bottom: 2rem
     @media (max-width: 767.98px)
         font-size: 20px
         font-weight: 800
@@ -35,10 +26,11 @@
 
 .subgroup-description
     margin: 0 auto
-    margin-bottom: 3rem
+    margin-bottom: 2rem
     p, span
-        font-size: 16px !important
-        color: #333
+        font-size: 1em !important
+        font-weight: 500
+        color: var(--text1)
     @media (max-width: 767.98px)
         margin-bottom: 1.5rem 
         p, span
@@ -49,9 +41,8 @@
     flex-direction: column
 
     .product-wrap
-        
         border-bottom: 1px dashed #e2e2e2
-        padding: 2rem 0
+        padding: 1rem 0
         @media (max-width: 767.98px)
             padding: 1rem 0 
         &:last-of-type
@@ -61,7 +52,7 @@
                 text-decoration: none
                  
             img 
-                width: 350px
+                width: 300px
                 @media (max-width: 767.98px)
                     width: 150px
             
@@ -69,28 +60,20 @@
                 margin-right: 1rem
                 .p-title
                     font-weight: 600
-                    font-size: 20px
-                    color: #720000
+                    font-size: 1.1em
+                    color: var(--blue1)
                     margin-bottom: 1rem
                     width: fit-content
-                    &:hover
-                        &::after
-                            width: 100%
-                            background: #720000
-                    &:after
-                        @extend %borderBottom
-
                    
 
                 .p-description
-                    font-weight: 500
                     p, span, div
-                        color: #000
+                        color: #000000
                         font-weight: normal
                         font-size: 14px !important
                         strong
                             font-weight: normal
-                            color: #444
+                            color: var(--text2)
 
                 @media (max-width: 767.98px)
                     .p-title

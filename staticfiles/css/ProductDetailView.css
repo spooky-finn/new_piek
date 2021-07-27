@@ -1,8 +1,9 @@
 :root {
 
-  --height_of_row_mod_table: 12px;
-  --mod_table_bg_color: #f9f9f9;
-  --mod_table_bg_color_hover: #eeeeee;
+  --cart_buttons_color: #bac7f32a;
+  --cart_buttons_radius: 20px;
+
+  --border_color: #e5e5e5;
 }
 
 
@@ -54,12 +55,6 @@ html{
 
 
 
-:root{
-  --cart_buttons_color: #efefef;
-  --cart_buttons_radius: 20px;
-
-  --border_color: #e5e5e5;
-}
 :active, :hover, :focus {
     outline: 0;
     outline-offset: 0;
