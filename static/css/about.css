@@ -9,6 +9,7 @@ main{
 }
   .splide img{
     width: auto !important;
+    padding: 10px;
     max-height: 700px;
   }
         
