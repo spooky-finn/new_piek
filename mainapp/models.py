@@ -144,3 +144,6 @@ class Sensor(models.Model):
 
     def __str__(self):
         return str(self.name)
+
+class FactoryPhotos(models.Model):
+    img = models.ImageField(upload_to='factory', null=True, blank=True)

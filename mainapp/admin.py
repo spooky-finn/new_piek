@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Group, Product, ProductImage, Modification, ProductDocs, Documentation, Sensor, Certificate
+from .models import Group, Product, ProductImage, Modification, ProductDocs, Documentation, Sensor, Certificate, FactoryPhotos
 from django.utils.translation import ugettext_lazy as _
 
 class ProductImageInline(admin.StackedInline):
@@ -33,3 +33,6 @@ admin.site.register(Group)
 admin.site.register(Documentation, DocumentationAdmin)
 admin.site.register(Sensor)
 admin.site.register(Certificate)
+admin.site.register(FactoryPhotos)
+
+

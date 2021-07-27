@@ -234,7 +234,8 @@ def contacts(request):
     return render(request,'mainapp/contacts.html', context={'in_cart_counter': cart_counter(request)})
 
 def about(request):
-    return render(request, 'mainapp/about.html', {'in_cart_counter': cart_counter(request),})
+    imgs = FactoryPhotos.objects.all()
+    return render(request, 'mainapp/about.html', {'in_cart_counter': cart_counter(request), 'imgs': imgs})
 
 def certificate(request):
     certificate = Certificate.objects.all()

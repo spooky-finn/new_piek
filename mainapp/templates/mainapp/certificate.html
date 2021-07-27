@@ -1,86 +1,29 @@
 <!DOCTYPE html>
 {% load static %}
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 <head>
 	{% include 'mainapp/parts/head-property.html' %}
-	<title>Сертификаты</title>
-  	<link href="{% static 'css/SubgroupDetailView1.css' %}" rel="stylesheet">
+	<title>Сертификаты - ПЭК</title>
 </head>
-
-<style>
-:root{
-	--navbar_bg_color: #fff;
-	--nav_link_color: #000;
-	}
-
-.certificate a{
-  width: 30% !important;
-	margin: 0 auto;
-}
-
-.certificate img:hover{
-
-	-webkit-transform: scale(1.02);
-	-ms-transform: scale(1.02);
-	transform: scale(1.02);
-	-webkit-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.1);
--moz-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.1);
-box-shadow: 0px 0px 4px 4px rgba(0,0,0,0.1);
-}
-
-.certificate img{
-width: 95% !important;
-height: auto;
-display: block;
-margin: 0 auto !important;
-transition-duration: .3s;
-}
-.secondary_ttl h1{
-	font-family: "Montserrat";
-	font-weight: 700;
-	font-size: 40px;
-	color: #000;
-	margin-bottom: 20px;
-	margin-top: 50px !important;
-}
-@media (max-width: 575.98px) {
-  .certificate a, .certificate img{
-    width: 90% !important;
-  }
-}
-</style>
-
 <body>
   {% include 'mainapp/parts/header.html' %}
-  <div class="container">
-    <div class="secondary_ttl ">
-      <h1>Сертификаты и декларации о соответствии</h1>
-    </div>
 
-    <div class="secondary-page-description">
+  <div class="container certificate">
+    <h1>Сертификаты и декларации о соответствии</h1>
+    <p class="secondary-page-description">
 			Ниже представлены декларации о соответствии на механизмы МЭО и МЭОФ, многооборотные электроприводы МЭП, МЭМ и ПЭМ.
 			Открыть сертификат в формате PDF можно просто кликнув на него.
-    </div>
+	</p>
 
+		<div class="certificateWrapper">
+			{% for cert in cert %}
+			<a href="{{ cert.file.url }}">
+			<img src="{{ cert.picture.url }}" alt="Сертификат соответсвия" title="При клике на картинку откроется PDF документ.">
+			</a>
+			{% endfor %}
+		</div>
   </div>
-			<main>
 
-
-				<div class="container">
-
-							<div class="d-flex py-5 flex-wrap certificate">
-
-                {% for cert in cert %}
-                <a href="{{ cert.file.url }}">
-                  <img src="{{ cert.picture.url }}" alt="Сертификат соответсвия" title="При клике на картинку откроется PDF документ.">
-                </a>
-                {% endfor %}
-
-							</div>
-
-					</div>
-
-			</main>
-			{% include 'mainapp/parts/footer.html' %}
-		</body>
-		</html>
+{% include 'mainapp/parts/footer.html' %}
+</body>
+</html>
