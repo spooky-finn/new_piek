@@ -6,7 +6,6 @@
 	<title>Поволжская Электротехническая Компания</title>
 	<meta name="description" content="Производит и поставляет электроприводы МЭО,
 	 МЭОФ, МЭП, МЭМ, ПЭМ, ПБР, шлагбаумы и трубопроводную арматуру с электроприводом"/>
-	<link href="{% static 'css/aos.css' %}" rel="stylesheet">
 </head>
 <style>
 :root{
@@ -16,112 +15,115 @@
 	--about_company_color: #000;
 	}
 </style>
-<body>			
-		<div  class="banner" style="background-image: url({% static 'img/main_page/banner/slider-1.jpg' %}); z-index: 99;">
-	
-				{% include 'mainapp/parts/header.html' %}
+<body >			
+			{% include 'mainapp/parts/header.html'%}
 
-				<div class="container title" style="padding-top: 5em;">
-					<h1
-					class="title-text p-3 pb-5 pb-md-0 p-md-0">Поволжская Электротехническая </br> Компания</h1>
+			<div class="basePage">
+				<div  class="banner" style="background-image: url({% static 'img/main_page/banner/slider-1.jpg' %})"></div>
+			
 
-						<h2 class="text px-3 p-md-0 pt-md-4">Производит исполнительные механизмы МЭО, МЭОФ, МЭП, МЭМ, ПЭМ, ПБР</h2>
+				<div class="container">
+					<div class="title">
+						<h1 >Поволжская Электротехническая  Компания</h1>
+						<h2 >Производим исполнительные механизмы для трубопроводной арматуры: МЭО, МЭОФ, МЭП, МЭМ, ПЭМ, ПБР</h2>
 					</div>
+				</div>
+
 			</div>
 
 
-			<main>
-				<div class="row p-0 m-0">
+
+
+
+					<div style="max-width: 1000px;" class="container basePageCatalog">
 
 
 
 
-					<div class="container">
 
-
-						<div class="container py-5 px-lg-5">
-							<div class="d-flex flex-wrap">
-
-								<h3 class="boring"> Электроприводы в общепромышленном исполнении</h3>
-								<div class="section d-flex flex-wrap">
+								
+								<div class="catGroup">
+									<p class="groupName"> Электроприводы в общепромышленном исполнении</p>
 
 								{% for cat in categories %}
 								{% if cat.id == 1 or cat.id == 2 or cat.id == 3 or cat.id == 6 or cat.id == 7 or cat.id == 8   %}
-								<div class="m-1 m-md-2 d-flex flex-fill separately">
-									<a class="d-flex flex-column flex-fill" href="{{ cat.slug }}">
 
-										<div class="m-2 py-2 my-lg-3"><img class="pic"src="{{ cat.img.url }}" alt="Исполнительный механизм" title="{{ cat.title }}"></div>
-										<div class="py-2 py-lg-5"><h3 >{{ cat.title }}</h3></div>
+									<a class="catItem" href="{{ cat.slug }}">
+
+										<img src="{{ cat.img.url }}">
+										<p>{{ cat.title }}</p>
 
 									</a>
-								</div>
+
 								{% endif %}
 								{% endfor %}
-									</div>
+								</div>
 
-								<h3 class="boring">Электроприводы во взрывозащищенном исполнении</h3>
-							<div class="section d-flex flex-wrap">
+
+
+
+
+								<div class="catGroup">
+									<p class="groupName">Взрывозащищенные электроприводы</p>
 
 								{% for cat in categories %}
 								{% if cat.id == 4 or cat.id == 5 or cat.id == 13   %}
-								<div class="m-1 m-md-2 d-flex flex-fill separately">
-									<a class="d-flex flex-column flex-fill" href="{{ cat.slug }}">
 
-										<div class="m-2 py-2 my-lg-3"><img class="pic"src="{{ cat.img.url }}" alt="Исполнительный механизм" title="{{ cat.title }}"></div>
-										<div class="py-2 py-lg-5"><h3 class="item-name"style="text-decoration:none;">{{ cat.title }}</h3></div>
+									<a class="catItem" href="{{ cat.slug }}">
+
+										<img src="{{ cat.img.url }}">
+										<p>{{ cat.title }}</p>
 
 									</a>
-								</div>
+
 								{% endif %}
 								{% endfor %}
 							</div>
 
-								<h3 class="boring">НКУ, пусковые и управляющие устройства</h3>
-							<div data-aos="fade"
+							<div class="catGroup"
+							data-aos="fade"
 							data-aos-duration="800"
-							data-aos-delay="50" 
-							class="section d-flex flex-wrap">
+							data-aos-delay="50">
+								<p class="groupName">НКУ, пусковые и управляющие устройства</p>
+
 								{% for cat in categories %}
 								{% if cat.id == 9  or cat.id == 10  or cat.id == 14   %}
-								<div class="m-1 m-md-2 d-flex flex-fill separately">
-									<a class="d-flex flex-column flex-fill" href="{{ cat.slug }}">
 
-										<div class="m-2 py-2 my-lg-3"><img class="pic"src="{{ cat.img.url }}" alt="Исполнительный механизм" title="{{ cat.title }}"></div>
-										<div class="py-2 py-lg-5"><h3 class="item-name"style="text-decoration:none;">{{ cat.title }}</h3></div>
+									<a class="catItem" href="{{ cat.slug }}">
+
+										<img src="{{ cat.img.url }}">
+										<p>{{ cat.title }}</p>
 
 									</a>
-								</div>
+
 								{% endif %}
 								{% endfor %}
 							</div>
 
 
-								<div data-aos="fade"
-									 data-aos-duration="800"
-									 data-aos-delay="50"
-									 class="section d-flex flex-wrap m-auto">
+							<div class="catGroup"
+							data-aos="fade"
+							data-aos-duration="800"
+							data-aos-delay="50">
+
+								<p class="groupName">Шлагбаумы и металлообработка</p>
 								{% for cat in categories %}
 								{% if cat.id == 12 or cat.id == 11 %}
-								<div class="m-1 m-md-2 d-flex flex-fill separately">
-									<a class="d-flex flex-column flex-fill" href="{{ cat.slug }}">
 
-										<div class="m-2 py-2 my-lg-3"><img class="pic"src="{{ cat.img.url }}" alt="Исполнительный механизм" title="{{ cat.title }}"></div>
-										<div class="py-2 py-lg-5"><h3 class="item-name"style="text-decoration:none;">{{ cat.title }}</h3></div>
+									<a class="catItem" href="{{ cat.slug }}">
+
+										<img src="{{ cat.img.url }}">
+										<p>{{ cat.title }}</p>
 
 									</a>
-								</div>
 								{% endif %}
 								{% endfor %}
-								</div>
 
-							</div>
+
 						</div>
 					</div>
 				</div>
 
-			</main>
-			<script src="{% static 'js/aos.js' %}"></script>
-			<script>AOS.init();</script>
 			{% include 'mainapp/parts/footer.html' %}
 
 		</body>

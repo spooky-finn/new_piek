@@ -7,7 +7,6 @@
 
 
 {% block name %}
-
 		<a class="product-parent" href="/{{ product.parent.slug }}"><p>{{ product.parent }} /</p></a>
 		<h1> {{ product.name }}</h1>
 
@@ -23,7 +22,7 @@
 	<div class="mod_table_bg py-5">
 		<div class="container">
 		<div class="d-flex pl-2 pl-md-0">
-			<div class="d-flex flex-column"  id="cart_btn">
+			<!-- <div class="d-flex flex-column"  id="cart_btn">
 
 				{% for mod in mod_list %}
 
@@ -37,7 +36,7 @@
 				</div>
 
 				{% endfor %}
-			</div>
+			</div> -->
 
 			
 			<div class="mod-table">
@@ -68,7 +67,7 @@
 	{% endfor %}
 	for (let j = 0, k=2; j < arr.length; j++, k++) {
 		$(`.mod-table table tr:nth-child( ${k} ) td:nth-child(1)`).text(arr[j]);
-		$(`.mod-table table tr:nth-child( ${k} ) td:nth-child(1)`).wrap(`<a href= ${arr_slug[j]} ></a>`);
+		$(`.mod-table table tr:nth-child( ${k} ) td:nth-child(1)`).wrapInner(`<a href= ${arr_slug[j]} ></a>`);
 	}
 	</script>
 	
@@ -87,16 +86,11 @@
 		}
 	</script>
 	
-	
-	<!-- <script src="{% static 'js/piek_modules/Sensors.js' %}"></script> -->
-	<script src="{% static 'js/piek_modules/Product.js' %}"></script>
 	<script type="module"  src="{% static 'js/ajax/Product.add-to-cart.js' %}"></script>
-	<!-- <script src="{% static 'js/jquery.fancybox.min.js' %}"></script> -->
 	
 	<script>
 	$(".js-cart-buttons").click(function () {
 		var id  = "#"+ $(this).attr('id');
-		console.log(id);
 		$(id).addClass("btn-animate");
 		});
 		

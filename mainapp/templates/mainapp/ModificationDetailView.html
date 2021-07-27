@@ -18,7 +18,7 @@
 {% block table %}
 <div class="container">
 <div class="d-flex">
-<div class="about-modification container py-4" id='cart-form-bg'>
+<div class="about-modification container" id='cart-form-bg'>
 
 	<div class="flex-column mod-content">
 
@@ -29,7 +29,7 @@
 
 
 <!-- Add to cart section -->
-<div class="d-none d-md-flex flex-column ml-4 pt-md-1">
+<div class="d-none d-md-flex flex-column ml-4">
 
 	<div class="d-flex flex-column justify-content-center">
 		<form id="js-form-add-cart" add-to-cart-url='{% url "product" pk=mod.id %}'>

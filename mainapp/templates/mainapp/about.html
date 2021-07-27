@@ -12,11 +12,6 @@
 
 
 <body>
-<style>
-	.footer{
-		border: none!important;;
-	}
-</style>
 <main>
 	<!-- <div class="about__banner" style="background-image: url({% static 'img/about-page/about-banner.jpg' %}); z-index: 99;"> -->
 
@@ -51,22 +46,20 @@
 
 		<p>Компания использует для металлообработки точные обрабатывающие ЧПУ центры от производителей Mazak, Hortford, Dossan, Mitsubishi, которые позволяют нам  за счет концентрации операции  и больших производственных мощностей иметь самые маленькие сроки изготовления, которые обычно составляют от 5 до 12 дней.</p>
 
-		<p cl>Каждая партия, прошедшая металлообработку, исключительно проверяется на измерительном центре.
+		<p >Каждая партия, прошедшая металлообработку, исключительно проверяется на измерительном центре.
 			Кроме того, мы постоянно проводим ресурсные испытания, цель которых - повышение качества и увеличение ресурса работы продукции.</p>
-	
-
-		<!-- <div class="splide mt-5">
+	</div>
+	<div class="container">
+		<div class="splide">
 			<div class="splide__track">
 				<ul class="splide__list">
-					<img class="splide__slide" src="{% static 'img/about-page/image_2.jpg' %}">
-					<img class="splide__slide" src="{% static 'img/about-page/4.jpg' %}">
-					<img class="splide__slide" src="{% static 'img/about-page/5.jpg' %}">
+					{% for img in imgs %}
+						<img class="splide__slide" src="{{img.img.url}}">
+					{% endfor %}
 				</ul>
 			</div>
-		</div> -->
-
+		</div>
 	</div>
-	{% include 'mainapp/parts/about.history.html'%}
 
 </main>
 
@@ -82,7 +75,7 @@
 	} );
 </script>
 
-
+<!-- 
 <script type="module">
 import {Gradient} from "../../../static/js/js-color-gradient.js";
 const colorGradient = new Gradient();
@@ -109,7 +102,7 @@ for (var i = 0; i <= about_history_rows.length; i++ ){
 	// линии
 	$(about_history_lines).eq(i).find('div, hr').attr('style', 'border-color: '+ color);
 }
-</script>
+</script> -->
 </body>
 
 </html>

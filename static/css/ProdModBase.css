@@ -1,15 +1,8 @@
-* {
-  box-sizing: border-box;
-}
-*::before, *::after {
-  box-sizing: border-box;
-}
 
 :root{
 
   --tables_cell_padding: 14px;
   --content_lh: 1.5;
-	--content_font_color: #444;
 }
 
 

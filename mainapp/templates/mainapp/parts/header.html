@@ -1,3 +1,4 @@
+{% load static %}
 {% if in_cart_counter == 0 %}
 <style media="screen">
   .js-cart-counter-wrap{display:none;}
@@ -6,10 +7,10 @@
 
 <div id="menu-close"></div>
 
-<nav class="navbar navbar-expand-md pt-4">
+<nav >
   <div class="container">
 
-    <a class="navbar-brand" href="/"><img class="media_small" src="/static/img/main_page/logo.png" width="75"></a>
+  
 
 
     <!-- CARD ICON ON MOBILE -->
@@ -23,43 +24,34 @@
         <div id="js-mobile-cart-counter-wrap" class="cart-counter" ><p id="js-mobile-cart-counter">{{ in_cart_counter }}</p></div>
     </a>
     </div> -->
-
-    <span class="d-block d-md-none nav-link mx-3 mr-4 hamburger" onclick="openNav()">&#9776</span>
-
-
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-      <ul class="navbar-nav">
-        <li class="nav-item active px-3"><a class="nav-link" href="/">Каталог</a></li>
-        <li class="nav-item active px-3"><a class="nav-link" href="/about/">О компании</a></li>
-        <li class="nav-item active px-3"><a class="nav-link" href="/docs/">Документация </a></li>
-
-          <li class="d-none d-lg-block nav-item active px-3"><a class="nav-link" href="/certificates/">Сертификаты</a></li>
-          <li class="nav-item active px-3"><a class="nav-link" href="/contacts/">Контакты</a></li>
-  </ul>
-
+    <div class="mobileNav d-flex d-md-none">
+      <a class="navbar-brand" href="/"><img src="/static/img/main_page/logo.svg" width="50"></a>
+      <div class="hamburger" onclick="openNav()">&#9776</div>
     </div>
-
-          <li class="d-none nav-item ml-auto active px-3 phone-wrapper">
-            <div class="d-flex flex-column contact-block">
-            <a class=" nav-link" href="tel:+78352570516"> 8 (8352) 57-05-16</a>
-            <a class="nav-link position-absolute mt-5" href="mailto:info@piek.ru">info@piek.ru</a>
-            </div>
-          </li>
+    
 
 
-        <!-- {% if in_cart_counter == 0 %} <style media="screen"> .cart-counter{ display: none; } </style> {% endif %} -->
+      <div class="navbar-links d-none d-md-flex">
+        <a class="navbar-brand" href="/"><img src="/static/img/main_page/logo.svg" width="75"></a>
 
+        <a href="/">Каталог</a>
+        <a href="/about/">О компании</a>
+        <a href="/docs/">Документация </a>
+        <a href="/certificates/">Сертификаты</a>
+        <a href="/contacts/">Контакты</a>
+        <div class="d-none d-lg-flex contact-block">
+          <a> 8 (8352) 57-05-16</a>
+          <a>info@piek.ru</a>
+        </div>
 
-          <li class="d-none d-md-block nav-item active px-3">
-            <a class="nav-link position-relative" href="/cart">
-              <svg width="1.6em" height="1.6em" viewBox="0 0 16 16" class="bi bi-cart-check" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                <path fill-rule="evenodd" d="M11.354 5.646a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708 0z"/>
-                <path fill-rule="evenodd" d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"/>
-              </svg>
-              <div id="js-cart-counter-wrap" class="cart-counter" ><p id="js-cart-counter">{{ in_cart_counter }}</p></div>
+        <!-- <a class="shopping-bag" href="/cart">
+          <img src="{% static 'icons/shopping-bag.svg'%}" alt="">
+          <div id="js-cart-counter-wrap" class="cart-counter" ><p id="js-cart-counter">{{ in_cart_counter }}</p></div>
+        </a> -->
 
-            </a>
-          </li>
+      </div>
+            
+
           <script type="text/javascript">
             if ((document.getElementById('js-cart-counter').textContent || document.getElementById('js-cart-counter').innerText) ==0){document.getElementById('js-cart-counter-wrap').style.display = "none";}else{document.getElementById('js-cart-counter-wrap').style.display = "inline";}
             	if ((document.getElementById('js-mobile-cart-counter').textContent || document.getElementById('js-mobile-cart-counter').innerText) ==0){document.getElementById('js-mobile-cart-counter-wrap').style.display = "none";}else{document.getElementById('js-mobile-cart-counter-wrap').style.display = "inline";}
@@ -73,7 +65,6 @@
   </div>
 </nav>
 
-<body>
   <div class="bg-sidenav">
     <div id="mySidenav" class="d-block d-md-none sidenav">
       <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -93,8 +84,8 @@ function openNav() {
   document.querySelector("#menu-close").style.height = "200vh";
   document.querySelector("#menu-close").style.visibility = "inherit";
   document.querySelector("#menu-close").style.background = "black";
-  document.querySelector("#menu-close").style.opacity = ".9";
-  document.querySelector("#menu-close").style.transition = ".4s";
+  document.querySelector("#menu-close").style.opacity = "1";
+  document.querySelector("#menu-close").style.transition = ".2s";
   $(window).scroll(function () {
   closeNav();
 });
@@ -103,8 +94,8 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.querySelector("#menu-close").style.background = "transparent";
-  document.querySelector("#menu-close").style.opacity = "0.3";
-  document.querySelector("#menu-close").style.transition = ".4s";
+  document.querySelector("#menu-close").style.opacity = "0.9";
+  document.querySelector("#menu-close").style.transition = ".2s";
   document.querySelector("#menu-close").style.visibility = "hidden";
 }
 </script>

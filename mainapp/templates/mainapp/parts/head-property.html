@@ -1,4 +1,5 @@
 {% load static %}
+{% load compress %}
 <meta charset="UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +14,21 @@
 
 <link href="{% static 'css/fonts.css' %}" rel="stylesheet">
 <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-<link href="{% static 'css/normal1.css' %}" rel="stylesheet">
+<link href="{% static 'css/index.css' %}" rel="stylesheet">
+<link href="{% static 'css/vars.css' %}" rel="stylesheet">
+<link href="{% static 'css/aos.css' %}" rel="stylesheet">
+
+
+{% compress css %}
+	<link type="text/x-scss" href="{% static 'sass/index.sass' %}" rel="stylesheet" media="screen">
+	<link type="text/x-scss" href="{% static 'sass/mobile.sass' %}" rel="stylesheet" media="screen">
+	<link type="text/x-scss" href="{% static 'sass/certificate.sass' %}" rel="stylesheet" media="screen">
+{% endcompress %}
+
 
 <link rel="shortcut icon" type="image/png" href="/media/main_page/favicon.png"/>
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
 
 
 
