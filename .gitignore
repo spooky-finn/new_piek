@@ -3,6 +3,7 @@ logs/*
 static/cache/*
 config/*
 adminstatic/*
+staticfiles/*
 *.pyc
 piek.conf
 jrl/prod_settings.py
