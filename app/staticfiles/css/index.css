@@ -371,10 +371,15 @@ body {
 	background: var(--light);
 }
 .emails-block div:nth-last-of-type(2){
-
 	margin: 0 1rem;
 }
-
+.emails-block div{
+	color: var(--text1);
+}
+.emails-block h5{
+	color: var(--text2);
+	font-size: .9em !important;
+}
 
 @media (max-width: 760px) {
 	.adress {
