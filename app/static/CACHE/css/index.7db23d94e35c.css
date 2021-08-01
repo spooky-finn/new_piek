@@ -1,0 +1,30 @@
+/* line 1, static/sass/index.sass */
+.navbar {
+  border-bottom: 1px solid var(--border); }
+  /* line 3, static/sass/index.sass */
+  .navbar .navbar-links {
+    display: flex;
+    width: 100%;
+    align-items: center; }
+    /* line 8, static/sass/index.sass */
+    .navbar .navbar-links a {
+      padding: 10px;
+      color: #000; }
+      /* line 11, static/sass/index.sass */
+      .navbar .navbar-links a:hover {
+        color: var(--link-color); }
+    /* line 14, static/sass/index.sass */
+    .navbar .navbar-links .contact-block {
+      border-left: 1px solid var(--border);
+      padding-left: 20px;
+      margin-left: auto; }
+      /* line 18, static/sass/index.sass */
+      .navbar .navbar-links .contact-block a:first-of-type {
+        font-size: .9em; }
+    /* line 20, static/sass/index.sass */
+    .navbar .navbar-links .shopping-bag {
+      position: relative; }
+      /* line 22, static/sass/index.sass */
+      .navbar .navbar-links .shopping-bag img {
+        width: 25px;
+        opacity: .5; }

@@ -1,0 +1,32 @@
+/* line 2, static/sass/certificate.sass */
+.certificate .certificateWrapper {
+  padding-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); }
+
+/* line 7, static/sass/certificate.sass */
+.certificate .certificate a {
+  width: 30%;
+  margin: 0 auto; }
+
+/* line 13, static/sass/certificate.sass */
+.certificate .certificate img:hover {
+  -webkit-box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 0px 4px 4px rgba(0, 0, 0, 0.1); }
+
+/* line 19, static/sass/certificate.sass */
+.certificate .certificate img {
+  width: 95% !important;
+  height: auto;
+  display: block;
+  margin: 0 auto !important;
+  transition-duration: .3s; }
+
+/* line 26, static/sass/certificate.sass */
+.certificate .secondary_ttl h1 {
+  font-weight: 700;
+  font-size: 40px;
+  color: #000;
+  margin-bottom: 20px;
+  margin-top: 50px !important; }

@@ -1,0 +1,74 @@
+/* line 1, static/sass/index.sass */
+.navbar {
+  border-bottom: 1px solid var(--border); }
+  /* line 3, static/sass/index.sass */
+  .navbar .navbar-links {
+    display: flex;
+    width: 100%;
+    align-items: center; }
+    /* line 8, static/sass/index.sass */
+    .navbar .navbar-links a {
+      padding: 10px;
+      color: #000000a9; }
+      /* line 11, static/sass/index.sass */
+      .navbar .navbar-links a:hover {
+        color: var(--link-color); }
+    /* line 14, static/sass/index.sass */
+    .navbar .navbar-links .contact-block {
+      border-left: 1px solid var(--border);
+      padding: 0 20px;
+      margin-left: auto; }
+      /* line 18, static/sass/index.sass */
+      .navbar .navbar-links .contact-block a:first-of-type {
+        font-size: .9em; }
+    /* line 20, static/sass/index.sass */
+    .navbar .navbar-links .shopping-bag {
+      position: relative;
+      padding-left: 15px;
+      border-left: 1px solid var(--border); }
+      /* line 24, static/sass/index.sass */
+      .navbar .navbar-links .shopping-bag img {
+        width: 25px;
+        opacity: .4; }
+
+/* line 28, static/sass/index.sass */
+.basePage {
+  position: relative;
+  height: 500px; }
+  /* line 31, static/sass/index.sass */
+  .basePage .title {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); }
+    /* line 35, static/sass/index.sass */
+    .basePage .title h1 {
+      font-weight: 600;
+      background: -webkit-linear-gradient(right, #7213ca, #0029e2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 2em;
+      margin: 1em 0; }
+    /* line 42, static/sass/index.sass */
+    .basePage .title h2 {
+      font-weight: 400;
+      color: var(--about_company_color);
+      font-size: 1em;
+      max-width: 500px;
+      text-align: left;
+      padding: 10px;
+      border-radius: 10px;
+      background: #fff; }
+  /* line 53, static/sass/index.sass */
+  .basePage .banner {
+    position: absolute;
+    z-index: -10;
+    background-size: auto;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center;
+    box-sizing: border-box;
+    opacity: .9; }

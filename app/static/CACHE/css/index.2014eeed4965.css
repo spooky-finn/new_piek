@@ -1,0 +1,21 @@
+/* line 1, static/sass/index.sass */
+.navbar {
+  border-bottom: 1px solid var(--border); }
+  /* line 3, static/sass/index.sass */
+  .navbar .navbar-links {
+    display: flex;
+    width: 100%;
+    align-items: center; }
+    /* line 8, static/sass/index.sass */
+    .navbar .navbar-links a {
+      color: #000; }
+      /* line 10, static/sass/index.sass */
+      .navbar .navbar-links a:hover {
+        color: var(--link-color); }
+    /* line 13, static/sass/index.sass */
+    .navbar .navbar-links .contact-block {
+      border-left: 1px solid #555;
+      margin-left: auto; }
+    /* line 16, static/sass/index.sass */
+    .navbar .navbar-links .shopping-bag {
+      widows: 40px; }

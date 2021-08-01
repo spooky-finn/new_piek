@@ -1,0 +1,16 @@
+/* line 1, static/sass/index.sass */
+.navbar {
+  border-bottom: 1px solid var(--border); }
+  /* line 3, static/sass/index.sass */
+  .navbar .navbar-links {
+    display: flex;
+    width: 100%; }
+    /* line 6, static/sass/index.sass */
+    .navbar .navbar-links .contact-block {
+      border-left: 1px solid #555; }
+    /* line 8, static/sass/index.sass */
+    .navbar .navbar-links a {
+      color: #000; }
+      /* line 10, static/sass/index.sass */
+      .navbar .navbar-links a:hover {
+        color: var(--link-color); }
