@@ -1,9 +1,0 @@
-/* line 1, static/sass/index.sass */
-.navbar {
-  border-bottom: 1px solid var(--border); }
-  /* line 3, static/sass/index.sass */
-  .navbar .navbar-links {
-    display: flex; }
-    /* line 5, static/sass/index.sass */
-    .navbar .navbar-links a {
-      color: #000; }

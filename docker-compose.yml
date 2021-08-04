@@ -1,10 +1,49 @@
-version: '3.9'
+version: "3.9"
 
-services:
-  app:
-    build:
-      content: .
-    ports:
-      - 8000:8000
+services: 
+
+  web:
+    build: .
+    command: bash -c "python manage.py migrate --noinput &&
+            python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - ./app:/app
+      - .:/usr/src/app
+      - db:/usr/src/app/db
+    ports: 
+      - 8000:8000
+    env_file: 
+      - ./.env.dev
+volumes: 
+  db:
+#   db: 
+#         # container_name: piek-site-db
+#     image: postgres:13.3-alpine
+#     volumes: 
+#       - postgres_data:/var/lib/postgresql/data/
+#     environment: 
+#       - POSTGRES_DB=db
+#       - POSTGRES_USER=postgres
+#       - POSTGRES_PASSWORD=postgres
+
+# volumes: 
+#   postgres_data:
+
+#   web:
+#     container_name: piek-cont
+#     build: .
+
+#     command: bash -c "python /piek-site/manage.py migrate --noinput &&
+#               python /piek-site/manage.py runserver 0.0.0.0:8000"
+
+#     restart: always
+#     environment:
+#       - SECRET_KEY=${SECRET_KEY}
+#       - DEBUG=1
+#     volumes:
+#       - .:/piek-site
+#     ports:
+#       - 8000:8000
+#     depends_on: 
+#       - db
+
+ 
